@@ -19,10 +19,10 @@ namespace stegan
                                                   { 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 } });
         static void Main(string[] args)
         {
-            string source = @"C:\Users\ceme4\source\repos\steganography\source.bmp";
-            string target = @"C:\Users\ceme4\source\repos\steganography\target.bmp";
-            string result = @"C:\Users\ceme4\source\repos\steganography\result.bmp";
-            string result_u = @"C:\Users\ceme4\source\repos\steganography\result_u.bmp";
+            string source = @"C:\Users\ceme4\source\repos\stegan\source.bmp";
+            string target = @"C:\Users\ceme4\source\repos\stegan\target.bmp";
+            string result = @"C:\Users\ceme4\source\repos\stegan\result.bmp";
+            string result_u = @"C:\Users\ceme4\source\repos\stegan\result_u.bmp";
 
             var bmp = Embedding(source, target, result);
             Extract(bmp, result_u);
@@ -71,7 +71,7 @@ namespace stegan
             return sourceImg;
         }
 
-        public static void Extract(Bitmap bmp, string result)
+        public static Bitmap Extract(Bitmap bmp, string result)
         {
             int t_i = 0;
             int t_j = 0;
@@ -98,6 +98,8 @@ namespace stegan
             }
 
             resultImg.Save(result);
+
+            return resultImg;
         }    
 
 
